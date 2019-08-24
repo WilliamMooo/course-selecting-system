@@ -122,32 +122,32 @@ course-selecting/fast:
 	$(MAKE) -f CMakeFiles\course-selecting.dir\build.make CMakeFiles/course-selecting.dir/build
 .PHONY : course-selecting/fast
 
-src/Course.obj: src/Course.cpp.obj
+src/Admin.obj: src/Admin.cpp.obj
 
-.PHONY : src/Course.obj
+.PHONY : src/Admin.obj
 
 # target to build an object file
-src/Course.cpp.obj:
-	$(MAKE) -f CMakeFiles\course-selecting.dir\build.make CMakeFiles/course-selecting.dir/src/Course.cpp.obj
-.PHONY : src/Course.cpp.obj
+src/Admin.cpp.obj:
+	$(MAKE) -f CMakeFiles\course-selecting.dir\build.make CMakeFiles/course-selecting.dir/src/Admin.cpp.obj
+.PHONY : src/Admin.cpp.obj
 
-src/Course.i: src/Course.cpp.i
+src/Admin.i: src/Admin.cpp.i
 
-.PHONY : src/Course.i
+.PHONY : src/Admin.i
 
 # target to preprocess a source file
-src/Course.cpp.i:
-	$(MAKE) -f CMakeFiles\course-selecting.dir\build.make CMakeFiles/course-selecting.dir/src/Course.cpp.i
-.PHONY : src/Course.cpp.i
+src/Admin.cpp.i:
+	$(MAKE) -f CMakeFiles\course-selecting.dir\build.make CMakeFiles/course-selecting.dir/src/Admin.cpp.i
+.PHONY : src/Admin.cpp.i
 
-src/Course.s: src/Course.cpp.s
+src/Admin.s: src/Admin.cpp.s
 
-.PHONY : src/Course.s
+.PHONY : src/Admin.s
 
 # target to generate assembly for a file
-src/Course.cpp.s:
-	$(MAKE) -f CMakeFiles\course-selecting.dir\build.make CMakeFiles/course-selecting.dir/src/Course.cpp.s
-.PHONY : src/Course.cpp.s
+src/Admin.cpp.s:
+	$(MAKE) -f CMakeFiles\course-selecting.dir\build.make CMakeFiles/course-selecting.dir/src/Admin.cpp.s
+.PHONY : src/Admin.cpp.s
 
 src/CourseSystem.obj: src/CourseSystem.cpp.obj
 
@@ -239,9 +239,9 @@ help:
 	@echo ... course-selecting
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... src/Course.obj
-	@echo ... src/Course.i
-	@echo ... src/Course.s
+	@echo ... src/Admin.obj
+	@echo ... src/Admin.i
+	@echo ... src/Admin.s
 	@echo ... src/CourseSystem.obj
 	@echo ... src/CourseSystem.i
 	@echo ... src/CourseSystem.s

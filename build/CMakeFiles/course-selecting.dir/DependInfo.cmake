@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/96101/Desktop/latest/src/Course.cpp" "C:/Users/96101/Desktop/latest/build/CMakeFiles/course-selecting.dir/src/Course.cpp.obj"
+  "C:/Users/96101/Desktop/latest/src/Admin.cpp" "C:/Users/96101/Desktop/latest/build/CMakeFiles/course-selecting.dir/src/Admin.cpp.obj"
   "C:/Users/96101/Desktop/latest/src/CourseSystem.cpp" "C:/Users/96101/Desktop/latest/build/CMakeFiles/course-selecting.dir/src/CourseSystem.cpp.obj"
   "C:/Users/96101/Desktop/latest/src/Email.cpp" "C:/Users/96101/Desktop/latest/build/CMakeFiles/course-selecting.dir/src/Email.cpp.obj"
   "C:/Users/96101/Desktop/latest/src/main.cpp" "C:/Users/96101/Desktop/latest/build/CMakeFiles/course-selecting.dir/src/main.cpp.obj"

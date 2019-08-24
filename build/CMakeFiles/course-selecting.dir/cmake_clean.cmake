@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/course-selecting.dir/src/Course.cpp.obj"
+  "CMakeFiles/course-selecting.dir/src/Admin.cpp.obj"
   "CMakeFiles/course-selecting.dir/src/CourseSystem.cpp.obj"
   "CMakeFiles/course-selecting.dir/src/Email.cpp.obj"
   "CMakeFiles/course-selecting.dir/src/main.cpp.obj"

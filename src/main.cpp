@@ -8,8 +8,13 @@
 
 #include "Email.h"
 #include "CourseSystem.h"
+#include "Admin.h"
 
 using namespace std;
+
+
+
+
 
 int getUserList(user *list);
 void login(user users[], int n);
@@ -24,7 +29,7 @@ int save(user users[], int n);
 
 int main() {
     //初始化
-    user users[100];
+    user users[1000];
     int usersNum = getUserList(users);
     int opcode;
     while(1) {
@@ -49,6 +54,8 @@ int main() {
 }
 
 void login(user users[], int n) {
+    bool isAdmin = false;
+    string admin = "q961017025@163.com";
     string email;
     string userName;
     string pass;
@@ -59,6 +66,7 @@ void login(user users[], int n) {
     }
     bool isExist = emailIsExist(users, email, n);
     if (isExist) {
+        if (email == admin) isAdmin = true;
         cout << "请输入密码：";
         cin >> pass;
         int isMatch = passIsMatched(users, pass, n);
@@ -69,9 +77,15 @@ void login(user users[], int n) {
             cout << "正在进入系统...";
             Sleep(4000);
             //进入系统
-            CourseSystem sys(users[isMatch]);
-            sys.run();
-            users[isMatch] = sys.update();
+            if (isAdmin) {
+                Admin ad;
+                ad.run();
+            } else {
+                users[0], users[1];
+                CourseSystem sys(users[isMatch]);
+                sys.run();
+                users[isMatch] = sys.update();
+            }
         } else {
             cout << "输入密码错误，请选择：1.重新输入 2.找回密码 3.退出)";
             int opcode2;
@@ -86,9 +100,14 @@ void login(user users[], int n) {
                             cout << "登陆成功" << endl;
                             Sleep(1000);
                             //进入系统
-                            CourseSystem sys(users[isMatch]);
-                            users[isMatch] = sys.update();
-                            sys.run();
+                            if (isAdmin) {
+                                Admin ad;
+                                ad.run();
+                            } else {
+                                CourseSystem sys(users[isMatch]);
+                                sys.run();
+                                users[isMatch] = sys.update();
+                            }
                         } else {
                             cout << "输入密码错误，请选择：1.重新输入 2.找回密码 3.退出)";
                         }

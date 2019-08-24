@@ -1,8 +1,8 @@
 [
 {
   "directory": "C:/Users/96101/Desktop/latest/build",
-  "command": "C:\\mingw64\\bin\\g++.exe   @CMakeFiles/course-selecting.dir/includes_CXX.rsp -g   -std=gnu++17 -o CMakeFiles\\course-selecting.dir\\src\\Course.cpp.obj -c C:\\Users\\96101\\Desktop\\latest\\src\\Course.cpp",
-  "file": "C:/Users/96101/Desktop/latest/src/Course.cpp"
+  "command": "C:\\mingw64\\bin\\g++.exe   @CMakeFiles/course-selecting.dir/includes_CXX.rsp -g   -std=gnu++17 -o CMakeFiles\\course-selecting.dir\\src\\Admin.cpp.obj -c C:\\Users\\96101\\Desktop\\latest\\src\\Admin.cpp",
+  "file": "C:/Users/96101/Desktop/latest/src/Admin.cpp"
 },
 {
   "directory": "C:/Users/96101/Desktop/latest/build",

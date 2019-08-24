@@ -1,6 +1,8 @@
 #include "user.h"
 #include "Course.h"
 
+using namespace std;
+
 class CourseSystem {
 private:
     user nowUser;

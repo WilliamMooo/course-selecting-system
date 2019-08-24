@@ -56,19 +56,19 @@ include CMakeFiles/course-selecting.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/course-selecting.dir/flags.make
 
-CMakeFiles/course-selecting.dir/src/Course.cpp.obj: CMakeFiles/course-selecting.dir/flags.make
-CMakeFiles/course-selecting.dir/src/Course.cpp.obj: CMakeFiles/course-selecting.dir/includes_CXX.rsp
-CMakeFiles/course-selecting.dir/src/Course.cpp.obj: ../src/Course.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\96101\Desktop\latest\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/course-selecting.dir/src/Course.cpp.obj"
-	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\course-selecting.dir\src\Course.cpp.obj -c C:\Users\96101\Desktop\latest\src\Course.cpp
+CMakeFiles/course-selecting.dir/src/Admin.cpp.obj: CMakeFiles/course-selecting.dir/flags.make
+CMakeFiles/course-selecting.dir/src/Admin.cpp.obj: CMakeFiles/course-selecting.dir/includes_CXX.rsp
+CMakeFiles/course-selecting.dir/src/Admin.cpp.obj: ../src/Admin.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\96101\Desktop\latest\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/course-selecting.dir/src/Admin.cpp.obj"
+	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\course-selecting.dir\src\Admin.cpp.obj -c C:\Users\96101\Desktop\latest\src\Admin.cpp
 
-CMakeFiles/course-selecting.dir/src/Course.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/course-selecting.dir/src/Course.cpp.i"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\96101\Desktop\latest\src\Course.cpp > CMakeFiles\course-selecting.dir\src\Course.cpp.i
+CMakeFiles/course-selecting.dir/src/Admin.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/course-selecting.dir/src/Admin.cpp.i"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\96101\Desktop\latest\src\Admin.cpp > CMakeFiles\course-selecting.dir\src\Admin.cpp.i
 
-CMakeFiles/course-selecting.dir/src/Course.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/course-selecting.dir/src/Course.cpp.s"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\96101\Desktop\latest\src\Course.cpp -o CMakeFiles\course-selecting.dir\src\Course.cpp.s
+CMakeFiles/course-selecting.dir/src/Admin.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/course-selecting.dir/src/Admin.cpp.s"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\96101\Desktop\latest\src\Admin.cpp -o CMakeFiles\course-selecting.dir\src\Admin.cpp.s
 
 CMakeFiles/course-selecting.dir/src/CourseSystem.cpp.obj: CMakeFiles/course-selecting.dir/flags.make
 CMakeFiles/course-selecting.dir/src/CourseSystem.cpp.obj: CMakeFiles/course-selecting.dir/includes_CXX.rsp
@@ -114,7 +114,7 @@ CMakeFiles/course-selecting.dir/src/main.cpp.s: cmake_force
 
 # Object files for target course-selecting
 course__selecting_OBJECTS = \
-"CMakeFiles/course-selecting.dir/src/Course.cpp.obj" \
+"CMakeFiles/course-selecting.dir/src/Admin.cpp.obj" \
 "CMakeFiles/course-selecting.dir/src/CourseSystem.cpp.obj" \
 "CMakeFiles/course-selecting.dir/src/Email.cpp.obj" \
 "CMakeFiles/course-selecting.dir/src/main.cpp.obj"
@@ -122,7 +122,7 @@ course__selecting_OBJECTS = \
 # External object files for target course-selecting
 course__selecting_EXTERNAL_OBJECTS =
 
-bin/course-selecting.exe: CMakeFiles/course-selecting.dir/src/Course.cpp.obj
+bin/course-selecting.exe: CMakeFiles/course-selecting.dir/src/Admin.cpp.obj
 bin/course-selecting.exe: CMakeFiles/course-selecting.dir/src/CourseSystem.cpp.obj
 bin/course-selecting.exe: CMakeFiles/course-selecting.dir/src/Email.cpp.obj
 bin/course-selecting.exe: CMakeFiles/course-selecting.dir/src/main.cpp.obj
