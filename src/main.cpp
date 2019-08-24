@@ -12,14 +12,10 @@
 
 using namespace std;
 
-
-
-
-
 int getUserList(user *list);
 void login(user users[], int n);
 bool emailIsExist(user users[], string email, int n);
-int passIsMatched(user users[], string pass, int n);
+bool passIsMatched(user users[], string email, string pass, int n);
 bool matchEmailAddr(string emailAddr);
 int retrieve(string email);
 void resetPsw(user users[], string email, int n);
@@ -35,7 +31,7 @@ int main() {
     while(1) {
         system("cls");
         cout << "欢迎使用选课系统" << endl;
-        cout << "请选择：1.登陆 0.退出系统" << endl;
+        cout << "请选择：1.登录 0.退出系统" << endl;
         cin >> opcode;
         if (opcode == 0) break;
         switch (opcode) {
@@ -44,7 +40,7 @@ int main() {
             break;
         default:
             cout << "输入操作码错误，请重新输入" << endl;
-            Sleep(2000);
+            system("pause");
             break;
         }
     }
@@ -69,13 +65,13 @@ void login(user users[], int n) {
         if (email == admin) isAdmin = true;
         cout << "请输入密码：";
         cin >> pass;
-        int isMatch = passIsMatched(users, pass, n);
-        if (isMatch != -1) {
+        bool isMatch = passIsMatched(users, email, pass, n);
+        if (isMatch) {
             cout << "登陆成功" << endl;
-            Sleep(1000);
+            system("pause");
             system("cls");
             cout << "正在进入系统...";
-            Sleep(4000);
+            Sleep(2000);
             //进入系统
             if (isAdmin) {
                 Admin ad;
@@ -84,21 +80,22 @@ void login(user users[], int n) {
                 users[0], users[1];
                 CourseSystem sys(users[isMatch]);
                 sys.run();
-                users[isMatch] = sys.update();
             }
         } else {
             cout << "输入密码错误，请选择：1.重新输入 2.找回密码 3.退出)";
             int opcode2;
             while(cin >> opcode2) {
                 if(opcode2 == 3) break;
+                bool fl = false;
                 switch (opcode2) {
                     case 1:
                         cout << "请输入密码：";
                         cin >> pass;
-                        isMatch = passIsMatched(users, pass, n);
-                        if (isMatch != -1) {
+                        isMatch = passIsMatched(users, email, pass, n);
+                        if (isMatch) {
+                            fl = true;
                             cout << "登陆成功" << endl;
-                            Sleep(1000);
+                            system("pause");
                             //进入系统
                             if (isAdmin) {
                                 Admin ad;
@@ -106,24 +103,25 @@ void login(user users[], int n) {
                             } else {
                                 CourseSystem sys(users[isMatch]);
                                 sys.run();
-                                users[isMatch] = sys.update();
                             }
                         } else {
                             cout << "输入密码错误，请选择：1.重新输入 2.找回密码 3.退出)";
                         }
                         break;
                     case 2:
+                        fl = true;
                         resetPsw(users, email, n);
                         break;
                     default:
                         cout << "输入操作码错误，请重新输入" << endl;
                         break;
                 }
+                if (fl) break;
             }
         }
     } else {
         cout << "该账号邮箱不存在，请联系管理员" << endl;
-        Sleep(4000);
+        system("pause");
     }
 }
 
@@ -132,7 +130,7 @@ int getWordList(string *list) {
     infile.open("data/chinese_dictionary.txt", ios::in);
     if (!infile) {
         cerr << "打开文件失败" << endl;
-        Sleep(4000);
+        system("pause");
         return 0;
     }
     int n = 0;
@@ -155,7 +153,7 @@ int getUserList(user *list) {
     infile.open("data/users.txt", ios::in);
     if (!infile) {
         cout << "open file fail" << endl;
-        Sleep(4000);
+        system("pause");
         return 0;
     }
     int n = 0;
@@ -178,7 +176,7 @@ int save(user users[], int n) {
     outFile.open("data/users.txt", ios::out);
     if (!outFile) {
         cout << "保存文件失败！" << endl;
-        Sleep(4000);
+        system("pause");
         return -1;
     }
     for (int i = 0; i < n; i++) {
@@ -198,13 +196,14 @@ bool emailIsExist(user users[], string email, int n) {
     return false;
 }
 
-int passIsMatched(user users[], string pass, int n) {
-    for (int i = 0; i < n; i++) {
-        if (pass == users[i].pass) {
-            return i;
+bool passIsMatched(user users[], string email, string pass, int n) {
+    bool ret = false;
+    for (int i = 0; i < n; i ++) {
+        if (email == users[i].email) {
+            if (pass == users[i].pass) ret = true;
         }
     }
-    return -1;
+    return ret;
 }
 
 int retrieve(string email) {
@@ -227,11 +226,12 @@ bool matchEmailAddr(string emailAddr) {
 }
 
 void resetPsw(user users[], string email, int n) {
-    cout << "请输入邮箱收到的动态验证码：" << endl;
+    cout << "请输入邮箱收到的动态验证码：(输入0退出)" << endl;
     int code = retrieve(email);
     int inputCode;
     while (cin >> inputCode) {
         bool flag = true;
+        if (inputCode == 0) break;
         if (code == inputCode) {
             //重置密码
             while (flag) {
@@ -248,7 +248,7 @@ void resetPsw(user users[], string email, int n) {
                 }
                 save(users, n);
                 cout << "修改成功" << endl;
-                Sleep(1000);
+                system("pause");
                 if (!flag) break;
             }
         } else {

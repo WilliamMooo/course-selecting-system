@@ -2,6 +2,7 @@
 #include <fstream>
 #include <iomanip>
 #include <cstring>
+#include <Windows.h>
 
 #include "Admin.h"
 
@@ -83,6 +84,9 @@ void Admin::addStudent() {
     cin >> newUser.id >> newUser.email >> newUser.userName >> newUser.pass;
     users[userNum] = newUser;
     userNum += 1;
+    if (save()) cout << "修改成功" << endl;
+    else cout << "修改失败" << endl;
+    Sleep(4000);
 }
 
 void Admin::addCourse() {
@@ -91,6 +95,9 @@ void Admin::addCourse() {
     cin >> newCourse.id >> newCourse.credit >> newCourse.name >> newCourse.time >> newCourse.period;
     courses[courseNum] = newCourse;
     courseNum += 1;
+    if (save()) cout << "修改成功" << endl;
+    else cout << "修改失败" << endl;
+    Sleep(4000);
 }
 
 void Admin::modStudent() {
@@ -132,11 +139,13 @@ void Admin::modStudent() {
                     cout << "输入操作码错误，请重新输入" << endl;
                     break;
                 }
+                break;
             }
         }
     }
     if (save()) cout << "修改成功" << endl;
     else cout << "修改失败" << endl;
+    Sleep(4000);
 }
 
 void Admin::modCourse() {
@@ -188,11 +197,13 @@ void Admin::modCourse() {
                     cout << "输入操作码错误，请重新输入" << endl;
                     break;
                 }
+                break;
             }
         }
     }
     if (save()) cout << "修改成功" << endl;
     else cout << "修改失败" << endl;
+    Sleep(4000);
 }
 
 void Admin::showStatus() {
@@ -223,7 +234,7 @@ void Admin::showStatus() {
             }
         }
         infile.close();
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i <= n; i++) {
             for (int j = 0; j < courseNum; j++) {
                 if (selectList[i] == courses[j].id) {
                     cout << setw(6) << i+1 << setw(10) << courses[j].id << setw(6) <<
@@ -233,16 +244,20 @@ void Admin::showStatus() {
             }
         }
     }
+    system("pause");
 }
 
 void Admin::run() {
-    int opcode;
+    userNum = getUserList(users);
+    courseNum = getCourseList(courses);
+    int opcode6 = -1;
     while (1) {
+        if (opcode6 == 0) break;
         system("cls");
         cout << "欢迎您，管理员！" << endl;;
         cout << "请选择： 1.增加学生 2.增加课程 3.修改学生信息 4.修改课程信息 5.查看学生选课 0.退出" << endl;
-        cin >> opcode;
-        switch (opcode) {
+        cin >> opcode6;
+        switch (opcode6) {
         case 1:
             addStudent();
             break;
@@ -258,13 +273,10 @@ void Admin::run() {
         case 5:
             showStatus();
             break;
-        case 0:
-            break;
         default:
             cout << "输入操作码错误，请重新输入" << endl;
             break;
         }
-        if (opcode == 0) break;
     }
     cout << "退出系统成功" << endl;
     system("pause");

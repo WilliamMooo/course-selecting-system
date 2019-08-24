@@ -177,7 +177,7 @@ void Email::sendTo() {
     recMsg(sock);
 
     //邮件内容
-    strcpy(subject, "动态密码");
+    strcpy(subject, "动态验证码");
     strcpy(content, dppsw);
 
     strcpy(sendBuf, "data\r\n\0");
