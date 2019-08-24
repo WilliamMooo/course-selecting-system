@@ -1,0 +1,3 @@
+C:/Users/96101/Desktop/latest/build/CMakeFiles/course-selecting.dir
+C:/Users/96101/Desktop/latest/build/CMakeFiles/edit_cache.dir
+C:/Users/96101/Desktop/latest/build/CMakeFiles/rebuild_cache.dir

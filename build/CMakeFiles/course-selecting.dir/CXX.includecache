@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/96101/Desktop/latest/src/main.cpp
+iostream
+-
+fstream
+-
+winsock2.h
+-
+windows.h
+-
+cstring
+-
+string
+-
+regex
+-
+Email.h
+C:/Users/96101/Desktop/latest/src/Email.h
+CourseSystem.h
+C:/Users/96101/Desktop/latest/src/CourseSystem.h
+
