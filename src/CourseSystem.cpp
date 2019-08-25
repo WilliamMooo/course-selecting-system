@@ -180,6 +180,7 @@ void CourseSystem::remove() {
         }
     } else {
         cout << "你未选修任何课程" << endl;
+        system("pause");
     }
 }
 

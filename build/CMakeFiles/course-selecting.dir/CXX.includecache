@@ -6,6 +6,18 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/96101/Desktop/latest/src/CourseSystem.cpp
+iostream
+-
+fstream
+-
+windows.h
+-
+iomanip
+-
+CourseSystem.h
+C:/Users/96101/Desktop/latest/src/CourseSystem.h
+
 C:/Users/96101/Desktop/latest/src/main.cpp
 iostream
 -

@@ -19,8 +19,8 @@ bool passIsMatched(user users[], string email, string pass, int n);
 bool matchEmailAddr(string emailAddr);
 int retrieve(string email);
 void resetPsw(user users[], string email, int n);
-
 int getWordList(string *list);
+int findUser(user users[], string pass, int n);
 int save(user users[], int n);
 
 int main() {
@@ -67,6 +67,7 @@ void login(user users[], int n) {
         cin >> pass;
         bool isMatch = passIsMatched(users, email, pass, n);
         if (isMatch) {
+            int index = findUser(users, pass, n);
             cout << "µÇÂ½³É¹¦" << endl;
             system("pause");
             system("cls");
@@ -77,12 +78,11 @@ void login(user users[], int n) {
                 Admin ad;
                 ad.run();
             } else {
-                users[0], users[1];
-                CourseSystem sys(users[isMatch]);
+                CourseSystem sys(users[index]);
                 sys.run();
             }
         } else {
-            cout << "ÊäÈëÃÜÂë´íÎó£¬ÇëÑ¡Ôñ£º1.ÖØĞÂÊäÈë 2.ÕÒ»ØÃÜÂë 3.ÍË³ö)";
+            cout << "ÊäÈëÃÜÂë´íÎó£¬ÇëÑ¡Ôñ£º1.ÖØĞÂÊäÈë 2.ÕÒ»ØÃÜÂë 3.ÍË³ö";
             int opcode2;
             while(cin >> opcode2) {
                 if(opcode2 == 3) break;
@@ -93,6 +93,8 @@ void login(user users[], int n) {
                         cin >> pass;
                         isMatch = passIsMatched(users, email, pass, n);
                         if (isMatch) {
+                            int index = findUser(users, pass, n);
+                            system("pause");
                             fl = true;
                             cout << "µÇÂ½³É¹¦" << endl;
                             system("pause");
@@ -101,11 +103,11 @@ void login(user users[], int n) {
                                 Admin ad;
                                 ad.run();
                             } else {
-                                CourseSystem sys(users[isMatch]);
+                                CourseSystem sys(users[index]);
                                 sys.run();
                             }
                         } else {
-                            cout << "ÊäÈëÃÜÂë´íÎó£¬ÇëÑ¡Ôñ£º1.ÖØĞÂÊäÈë 2.ÕÒ»ØÃÜÂë 3.ÍË³ö)";
+                            cout << "ÊäÈëÃÜÂë´íÎó£¬ÇëÑ¡Ôñ£º1.ÖØĞÂÊäÈë 2.ÕÒ»ØÃÜÂë 3.ÍË³ö";
                         }
                         break;
                     case 2:
@@ -204,6 +206,15 @@ bool passIsMatched(user users[], string email, string pass, int n) {
         }
     }
     return ret;
+}
+
+int findUser(user users[], string pass, int n) {
+    for (int i = 0; i < n; i ++) {
+        if (users[i].pass == pass) {
+            return i;
+        }
+    }
+    return 0;
 }
 
 int retrieve(string email) {
